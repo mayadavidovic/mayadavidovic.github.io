@@ -22,48 +22,79 @@
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  opacity: 1;
+portfolio-item {
   display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 530px;
+  margin: auto auto 1rem;
+}
+
+.portfolio-item .caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
   width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
+  background-color: rgba(33, 37, 41, 0.2);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-.container:hover .image {
-  opacity: 0.3;
+.portfolio-item .caption .caption-content {
+  color: #fff;
+  margin: auto 2rem 2rem;
 }
 
-.container:hover .middle {
-  opacity: 1;
+.portfolio-item .caption .caption-content h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
-.text {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+.portfolio-item .caption .caption-content p {
+  font-weight: 300;
+  font-size: 1.2rem;
 }
+
+@media (min-width: 992px) {
+  .portfolio-item {
+    max-width: none;
+    margin: 0;
+  }
+  .portfolio-item .caption {
+    -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+    -webkit-clip-path: inset(0px);
+    clip-path: inset(0px);
+  }
+  .portfolio-item .caption .caption-content {
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+  }
+  .portfolio-item img {
+    -webkit-transition: -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(-1px);
+    clip-path: inset(-1px);
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+  .portfolio-item:hover .caption {
+    background-color: rgba(29, 128, 159, 0.9);
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+}
+
 </style>
-
 </head>
 
 <body>
@@ -113,7 +144,7 @@
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Content
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
@@ -123,11 +154,69 @@
   </div>
 
   <div class="container">
-    <img src="img/lumbar-puncture.jpg" alt="" class="image" style="width:100%">
+    <img src="img/lumbar-puncture.jpg">
+    <div class="image">
     <div class="middle">
+    <div class="overlay">
     <div class="text">Lumbar puncture (or lumbar tap) is a diagnostic procedure used to collect CSF and measure intercranial pressure. The procedure as it’s done today consists of sticking a needle into the patient’s spine, attaching a glass manometer to the needle, then letting CSF drip out the end of the needle into a jar! Sounds painful, right? My team and I decided that there must be a better way to do this, and so the EZ-Tap Lumbar Puncture Device was born. Our product combines the entire procedure into one compact device, making it much simpler and faster (and less scary) to complete the three main goals of lumbar punctures: (1) detect when the current location has been reached by the needle tip, (2) measure the patient’s intracranial pressure, and (3) collect CSF. Don’t know what any of these words mean, or want to learn more about our design process? Click for more info!</div>
   </div>
-</div>
+</div>-->
+
+<!-- Portfolio -->
+  <section class="content-section" id="portfolio">
+    <div class="container">
+      <!--<div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">Portfolio</h3>
+        <h2 class="mb-5">Recent Projects</h2>
+      </div>-->
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>EZ-Tap Device</h2>
+                <p class="mb-0">A lumbar puncture device designed to improve success and efficiency of the procedure</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/lumbar-puncture.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Ice Cream</h2>
+                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Strawberries</h2>
+                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Workspace</h2>
+                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <hr>
 
